@@ -12,8 +12,14 @@ const SideNav = (props) => {
     const history = useHistory();
     // const [collapse, setCollapse] = useState([false]);
 
-    const handleUserClick = () => {
-        history.push('/upload');
+    const handleUserClick = (task) => {
+
+        if (task === 1)
+            history.push('/task1');
+        if (task === 2)
+            history.push('/task2');
+        if (task === 3)
+            history.push('/task3');
     }
 
     const handleVideosClick = () => {
@@ -38,13 +44,18 @@ const SideNav = (props) => {
 
             </div>
             <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
-                <Menu.Item key="1" onClick={handleUserClick}>
+
+                <Menu.Item key="1" onClick={() => handleUserClick(1)}>
                     <UploadOutlined />
-                    <span> Upload</span>
+                    <span> Task 1</span>
                 </Menu.Item>
-                <Menu.Item key="2" onClick={handleFileClick}>
+                <Menu.Item key="2" onClick={() => handleUserClick(2)}>
                     <SolutionOutlined />
-                    <span> Results</span>
+                    <span> Task 2</span>
+                </Menu.Item>
+                <Menu.Item key="3" onClick={() => handleUserClick(3)}>
+                    <SolutionOutlined />
+                    <span> Task 3</span>
                 </Menu.Item>
             </Menu>
         </div >

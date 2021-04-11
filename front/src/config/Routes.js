@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// BrowserRouter
 import { HashRouter as Router, Route, Switch, Redirect } from "react-router-dom";
-// import List from "../components/pages/list";
 import Files from "../component/pages/Files";
 import SideNav from "../component/layouts/Sidebar";
 import { Input, Space, PageHeader, Layout, Menu, Dropdown, Button, Tag, Typography, Row, Col } from 'antd';
@@ -12,6 +10,9 @@ import {
     MenuFoldOutlined
 } from '@ant-design/icons';
 import UploadFile from '../component/pages/Upload';
+import TaskOne from '../component/pages/TaskOne';
+import TaskTwo from '../component/pages/TaskTwo';
+import TaskThree from '../component/pages/TaskThree';
 
 const { Header, Sider, Content } = Layout;
 
@@ -50,11 +51,6 @@ const Routes = () => {
                                     // position: "relative", marginLeft: "-81.6rem" 
                                 })}
                             </Col>
-                            <Col span={4} offset={17}>
-                                <Input.Search placeholder="input search text" onSearch={onSearch} style={{ width: 200, marginTop: 17 }} />
-                            </Col>
-                            <Col> <Button key="3">Operation</Button>
-                            </Col>
 
                         </Row>
 
@@ -62,12 +58,10 @@ const Routes = () => {
                     </Header>
                     <Content style={{ margin: '24px 16px', padding: 24, minHeight: "calc(100vh - 114px)", background: "#fff" }}>
                         <Switch>
-                            {/* <Route path="/list" component={List} /> */}
-                            {/* <Route path="/form" component={Form} /> */}
-                            <Route path="/files" component={Files} />
-                            <Route path="/Upload" component={UploadFile} />
-                            {/* <Route path="/videos" component={Videos} /> */}
-                            <Redirect to="/Upload" from="/" />
+                            <Route path="/task1" component={TaskOne} />
+                            <Route path="/task3" component={TaskThree} />
+                            <Route path="/task2" component={TaskTwo} />
+                            <Redirect to="/task1" from="/" />
                         </Switch>
                     </Content>
                 </Layout>
