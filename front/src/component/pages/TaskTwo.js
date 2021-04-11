@@ -50,7 +50,7 @@ const TaskTwo = () => {
             />,
             <Row gutter={[40, 0]}>
                 <Col span={10}>
-                    <Input placeholder="Enter the numbers. Ex: '3215412354'" onChange={handleChange} />
+                    <Input placeholder="Enter the numbers. Ex: '3215412354 '" onChange={handleChange} />
                 </Col>
 
                 <Col span={2}>

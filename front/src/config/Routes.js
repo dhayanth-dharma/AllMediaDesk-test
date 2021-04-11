@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { HashRouter as Router, Route, Switch, Redirect } from "react-router-dom";
-import Files from "../component/pages/Files";
 import SideNav from "../component/layouts/Sidebar";
 import { Input, Space, PageHeader, Layout, Menu, Dropdown, Button, Tag, Typography, Row, Col } from 'antd';
 import { EllipsisOutlined } from '@ant-design/icons';
@@ -9,7 +8,6 @@ import {
     MenuUnfoldOutlined,
     MenuFoldOutlined
 } from '@ant-design/icons';
-import UploadFile from '../component/pages/Upload';
 import TaskOne from '../component/pages/TaskOne';
 import TaskTwo from '../component/pages/TaskTwo';
 import TaskThree from '../component/pages/TaskThree';
