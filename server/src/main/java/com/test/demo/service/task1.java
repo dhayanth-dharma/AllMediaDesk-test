@@ -1,14 +1,20 @@
 package com.test.demo.service;
 
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class task1 {
 
 	public static void main(String[] args) {
-		task1();
+		task2();
 	}
 	
+	/**
+	 * Task 1 Calculator term method
+	 * @Input: term: ( 12 - 2 ) * 3 / 3
+	 * return : double 
+	 */
 	public static double task1() {
 		Scanner scanner = new Scanner(new InputStreamReader(System.in));
 		System.out.println("Please enter your input term: ");
@@ -17,9 +23,7 @@ public class task1 {
 		System.out.println("Example: ( 12 - 2 ) * 3 / 3 ");
 		System.out.println("Enter the term : ");
         String input = scanner.nextLine();
-//        String answer = input.substring(input.indexOf("(")+1,input.indexOf(")"));
-//        System.out.println(answer);
-        
+  
         boolean isOpenBracket=false;
         double leftValue=0;
         double rightVale=0;
@@ -55,8 +59,7 @@ public class task1 {
     					} else if(operand.equals("-")){
     						innerBracketLeftValue = innerBracketLeftValue-Double.valueOf(inputArr[i]);
     					}
-        			}
-        				
+        			}	
         		}
         		else if("+ / - *".contains(inputArr[i])){
         			operand=inputArr[i];
@@ -80,14 +83,40 @@ public class task1 {
 					}
     			}
         	}
-        	
-        	
         }            
-        
     	System.out.println(leftValue);
     	return leftValue;
 	}
 	
+	/**
+	 * Task 2 Number sorting method. 
+	 * @Input: numbers: Ex: 321212154
+	 * return : int[]_sorted
+	 */
+	public static int[] task2() {
+		
+	    Scanner scanner = new Scanner(System.in);
+		System.out.println("Enter the numbers:");
+	    String input = scanner.nextLine();
+	    String[] inputArr=input.split("");
+	    int numbersArr[] = new int[inputArr.length];
+	    for(int k=0; k< inputArr.length;k++) {
+	    	numbersArr[k] = Integer.valueOf(inputArr[k]);
+	    }
+	    int length=numbersArr.length-1;
+	    int temp=0;
+		for (int i = 0; i < length  ; i++) {
+		  for (int j = 0; j < length - i ; j++) {
+		    if (numbersArr[j] > numbersArr[j+1]){
+		       temp = numbersArr[j];
+		       numbersArr[j] = numbersArr[j+1];
+		       numbersArr[j+1] = temp;
+		    }
+		  }
+		}
+		System.out.println(Arrays.toString(numbersArr));
+		return numbersArr;
+	}
 	
 	
 }
